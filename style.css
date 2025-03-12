@@ -184,7 +184,7 @@ h2 {
 
   .heart.active {
     top: auto !important;
-    bottom: 5% !important;
+    bottom: 40% !important;
     transform: translateX(-50%) scale(0.7) !important;
   }
 
@@ -223,7 +223,7 @@ h2 {
 
   .heart.active {
     top: auto !important;
-    bottom: 5% !important;
+    bottom: 40% !important;
     transform: translateX(-50%) scale(0.7) !important;
   }
 
@@ -262,7 +262,7 @@ h2 {
 
   .heart.active {
     top: auto !important;
-    bottom: 4% !important;
+    bottom: 40% !important;
     transform: translateX(-50%) scale(0.7) !important;
   }
 
