@@ -1,7 +1,8 @@
 :root {
   --primary-color: #ff3366;
   --text-color: #4a4a4a;
-  --animation-time: 1.5s;
+  --animation-time: 1.8s;
+  --signature-color: #ff3366;
 }
 
 body {
@@ -19,17 +20,20 @@ body {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
+  will-change: transform, opacity;
 }
 
 .heart {
+  touch-action: manipulation; 
   position: absolute;
   left: 50%;
   top: 40%;
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 2;
-  filter: drop-shadow(0 0 12px rgba(255,51,102,0.4));
+  filter: drop-shadow(0 0 12px rgba(255, 51, 102, 0.4));
   transition: all var(--animation-time) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  will-change: transform;
 }
 
 .heart img {
@@ -52,6 +56,7 @@ body {
   overflow: hidden;
   opacity: 0;
   transform-origin: center 120%;
+  will-change: transform, opacity;
 }
 
 .message::before {
@@ -71,10 +76,33 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease 0.4s;
+  text-align: justify;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.message-content h1 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  font-family: 'Great Vibes', cursive;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+h2 {
+  color: var(--signature-color);
+  font-family: cursive;
+  font-size: 1.4em;
+  display: block;
+  margin-top: 40px;
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .message.active {
-  animation: unfold var(--animation-time) cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation: unfold var(--animation-time) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .message.active .message-content {
@@ -85,7 +113,7 @@ body {
 .heart.active {
   top: 85%;
   transform: translate(-50%, -50%) scale(0.8) rotate(8deg);
-  filter: brightness(1.2) drop-shadow(0 0 20px rgba(255,51,102,0.6));
+  filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 51, 102, 0.6));
 }
 
 .back {
@@ -93,25 +121,25 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: opacity 0.4s ease;
 }
 
 /* Animations */
 @keyframes unfold {
   0% {
-      transform: translate(-50%, -50%) scale(0) rotateZ(-15deg);
-      opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0) rotateZ(-15deg);
+    opacity: 0;
   }
-  60% {
-      transform: translate(-50%, -50%) scale(1.02) rotateZ(5deg);
-      opacity: 1;
+  40% {
+    transform: translate3d(-50%, -50%, 0) scale(1.02) rotateZ(5deg);
+    opacity: 1;
   }
-  100% {
-      transform: translate(-50%, -50%) scale(1) rotateZ(0deg);
-      opacity: 1;
+  70%, 100% {
+    transform: translate3d(-50%, -50%, 0) scale(1) rotateZ(0deg);
+    opacity: 1;
   }
 }
 
@@ -123,29 +151,119 @@ body {
 .ripple {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255,51,102,0.2);
+  background: radial-gradient(circle, rgba(255, 51, 102, 0.3) 0%, rgba(255, 51, 102, 0) 70%);
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: ripple 1.2s ease-out;
+  animation: ripple 1s ease-out forwards;
+  transform: translate3d(-50%, -50%, 0);
 }
 
 @keyframes ripple {
   from {
-      width: 0;
-      height: 0;
-      opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    opacity: 1;
   }
   to {
-      width: 300px;
-      height: 300px;
-      opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(3);
+    opacity: 0;
   }
 }
 
 @media (max-width: 768px) {
   .message {
-      width: 90%;
-      height: 70vh;
+    width: 90%;
+    height: 70vh;
   }
   .heart img { width: 100px; }
+}
+
+@media (max-width: 768px) {
+  .message {
+    width: 90%;
+    height: 80vh; /* Better mobile height */
+    max-width: none; /* Allow full width */
+  }
+
+  .heart img {
+    width: 90px; /* Smaller heart for mobile */
+  }
+
+  .message-content {
+    padding: 25px; /* Reduce padding */
+    font-size: 0.85rem; /* Adjust base size */
+    line-height: 1.6; /* Better readability */
+  }
+
+  .message-content h1 {
+    font-size: 2em; /* Smaller heading */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 1.2em; /* Adjust signature */
+    margin-top: 30px;
+  }
+
+  /* Mobile-specific touch optimizations */
+  .heart {
+    touch-action: manipulation; /* Prevent zoom */
+    user-select: none;
+  }
+
+  .back {
+    bottom: 8%; /* Adjust position */
+    font-size: 0.9em;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    height: 85vh; /* Taller view for small phones */
+    border-radius: 10px; /* Softer corners */
+  }
+
+  .message-content {
+    padding: 20px;
+    font-size: 0.8rem;
+  }
+
+  .message-content h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+}
+
+/* Portrait orientation optimization */
+@media (max-height: 700px) and (orientation: portrait) {
+  .message {
+    height: 75vh;
+    top: 55%; /* Lower position */
+  }
+
+  .heart.active {
+    top: 90%; /* Higher position */
+  }
+
+  .message-content {
+    overflow-y: auto; /* Enable scrolling */
+    max-height: 60vh;
+  }
+}
+
+/* Ripple effect mobile adjustment */
+@media (hover: none) {
+  .ripple {
+    animation: ripple-mobile 1s ease-out forwards;
+  }
+
+  @keyframes ripple-mobile {
+    to {
+      transform: translate3d(-50%, -50%, 0) scale(2);
+    }
+  }
 }
