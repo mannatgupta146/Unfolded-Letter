@@ -183,12 +183,13 @@ h2 {
   }
 
   .heart.active {
-    top: 88% !important;
-    transform: translate(-50%, 0) scale(0.7) !important;
+    top: auto !important;
+    bottom: 5% !important;
+    transform: translateX(-50%) scale(0.7) !important;
   }
 
   .heart img {
-    width: 80px;
+    width: 70px;
   }
 
   .message-content {
@@ -199,30 +200,19 @@ h2 {
     overflow-y: auto;
   }
 
-  .message-content h1 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 1.1em;
-    margin-top: 25px;
-  }
-
   .back {
-    bottom: 20% !important;
+    bottom: 15% !important;
     font-size: 0.85em;
     width: 90%;
     padding: 0 5%;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 
 @media (max-width: 480px) {
-  message {
+  .message {
     width: 94%;
     height: 65vh;
-    top: 12% !important;
+    top: 10% !important;
     transform: translate(-50%, 0) scale(0) !important;
     max-width: none;
   }
@@ -232,12 +222,13 @@ h2 {
   }
 
   .heart.active {
-    top: 88% !important;
-    transform: translate(-50%, 0) scale(0.7) !important;
+    top: auto !important;
+    bottom: 5% !important;
+    transform: translateX(-50%) scale(0.7) !important;
   }
 
   .heart img {
-    width: 80px;
+    width: 70px;
   }
 
   .message-content {
@@ -248,29 +239,18 @@ h2 {
     overflow-y: auto;
   }
 
-  .message-content h1 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 1.1em;
-    margin-top: 25px;
-  }
-
   .back {
-    bottom: 20% !important;
+    bottom: 13% !important;
     font-size: 0.85em;
     width: 90%;
     padding: 0 5%;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 
 @media (max-height: 700px) and (orientation: portrait) {
-  message {
+  .message {
     width: 94%;
-    height: 65vh;
+    height: 75vh;
     top: 12% !important;
     transform: translate(-50%, 0) scale(0) !important;
     max-width: none;
@@ -281,12 +261,13 @@ h2 {
   }
 
   .heart.active {
-    top: 88% !important;
-    transform: translate(-50%, 0) scale(0.7) !important;
+    top: auto !important;
+    bottom: 4% !important;
+    transform: translateX(-50%) scale(0.7) !important;
   }
 
   .heart img {
-    width: 80px;
+    width: 70px;
   }
 
   .message-content {
@@ -297,22 +278,11 @@ h2 {
     overflow-y: auto;
   }
 
-  .message-content h1 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 1.1em;
-    margin-top: 25px;
-  }
-
   .back {
-    bottom: 20% !important;
+    bottom: 10% !important;
     font-size: 0.85em;
     width: 90%;
     padding: 0 5%;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -323,7 +293,7 @@ h2 {
 
   @keyframes ripple-mobile {
     to {
-      transform: translate3d(-50%, -50%, 0) scale(1.8);
+      transform: translate3d(-50%, -50%, 0) scale(1.5);
     }
   }
 }
