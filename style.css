@@ -168,50 +168,52 @@ h2 {
   }
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .message {
     width: 90%;
     height: 70vh;
+    top: 15% !important;
+    transform: translate(-50%, 0) scale(0) !important;
+    max-width: none;
   }
-  .heart img { width: 100px; }
-}
 
-@media (max-width: 768px) {
-  .message {
-    width: 90%;
-    height: 80vh; /* Better mobile height */
-    max-width: none; /* Allow full width */
+  .message.active {
+    transform: translate(-50%, 0) scale(1) !important;
+  }
+
+  .heart.active {
+    top: 25% !important;
+    transform: translate(-50%, 0) scale(0.7) !important;
   }
 
   .heart img {
-    width: 90px; /* Smaller heart for mobile */
+    width: 90px;
   }
 
   .message-content {
-    padding: 25px; /* Reduce padding */
-    font-size: 0.85rem; /* Adjust base size */
-    line-height: 1.6; /* Better readability */
+    padding: 25px;
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
 
   .message-content h1 {
-    font-size: 2em; /* Smaller heading */
+    font-size: 2em;
     margin-bottom: 20px;
-    letter-spacing: 1px;
   }
 
   h2 {
-    font-size: 1.2em; /* Adjust signature */
+    font-size: 1.2em;
     margin-top: 30px;
   }
 
-  /* Mobile-specific touch optimizations */
   .heart {
-    touch-action: manipulation; /* Prevent zoom */
+    touch-action: manipulation;
     user-select: none;
   }
 
   .back {
-    bottom: 8%; /* Adjust position */
+    bottom: 12%;
     font-size: 0.9em;
     width: 80%;
     text-align: center;
@@ -220,8 +222,8 @@ h2 {
 
 @media (max-width: 480px) {
   .message {
-    height: 85vh; /* Taller view for small phones */
-    border-radius: 10px; /* Softer corners */
+    height: 72vh;
+    border-radius: 10px;
   }
 
   .message-content {
@@ -238,24 +240,22 @@ h2 {
   }
 }
 
-/* Portrait orientation optimization */
 @media (max-height: 700px) and (orientation: portrait) {
   .message {
-    height: 75vh;
-    top: 55%; /* Lower position */
+    height: 65vh;
+    top: 12%;
   }
 
   .heart.active {
-    top: 90%; /* Higher position */
+    top: 22%;
   }
 
   .message-content {
-    overflow-y: auto; /* Enable scrolling */
-    max-height: 60vh;
+    overflow-y: auto;
+    max-height: 55vh;
   }
 }
 
-/* Ripple effect mobile adjustment */
 @media (hover: none) {
   .ripple {
     animation: ripple-mobile 1s ease-out forwards;
