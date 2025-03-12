@@ -219,34 +219,100 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  .message {
-    height: 70vh;
-    top: 10% !important;
-    border-radius: 8px;
+  message {
+    width: 94%;
+    height: 65vh;
+    top: 12% !important;
+    transform: translate(-50%, 0) scale(0) !important;
+    max-width: none;
+  }
+
+  .message.active {
+    transform: translate(-50%, 0) scale(1) !important;
   }
 
   .heart.active {
-    top: 90% !important;
+    top: 88% !important;
+    transform: translate(-50%, 0) scale(0.7) !important;
+  }
+
+  .heart img {
+    width: 80px;
   }
 
   .message-content {
-    padding: 15px;
-    font-size: 0.8rem;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  .message-content h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    margin-top: 25px;
+  }
+
+  .back {
+    bottom: 20% !important;
+    font-size: 0.85em;
+    width: 90%;
+    padding: 0 5%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 
 @media (max-height: 700px) and (orientation: portrait) {
-  .message {
-    height: 75vh;
-    top: 8% !important;
+  message {
+    width: 94%;
+    height: 65vh;
+    top: 12% !important;
+    transform: translate(-50%, 0) scale(0) !important;
+    max-width: none;
+  }
+
+  .message.active {
+    transform: translate(-50%, 0) scale(1) !important;
   }
 
   .heart.active {
-    top: 92% !important;
+    top: 88% !important;
+    transform: translate(-50%, 0) scale(0.7) !important;
+  }
+
+  .heart img {
+    width: 80px;
+  }
+
+  .message-content {
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  .message-content h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    margin-top: 25px;
   }
 
   .back {
-    bottom: 18% !important;
+    bottom: 20% !important;
+    font-size: 0.85em;
+    width: 90%;
+    padding: 0 5%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 }
 
