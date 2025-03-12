@@ -1,205 +1,151 @@
-h1,
-p {
-  font-family: "Hind", sans-serif;
-}
-
-p {
-  text-indent: 50px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-h1 {
-  font-weight: 800;
-  color: rgb(55, 0, 255);
-  text-shadow: 0 0 10px white;
+:root {
+  --primary-color: #ff3366;
+  --text-color: #4a4a4a;
+  --animation-time: 1.5s;
 }
 
 body {
-  margin: 0px;
-  background: url(https://i.postimg.cc/5tgNs0n9/couple-sunset-city-scenery-art-uhdpaper-com-4-K-8-264.jpg);
+  margin: 0;
+  min-height: 100vh;
+  background: url('image.png') no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .container {
   position: relative;
-  width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
 }
 
 .heart {
   position: absolute;
   left: 50%;
   top: 40%;
-  text-align: center;
   transform: translate(-50%, -50%);
-  transiton: transform 2s;
-  z-index: 1;
+  cursor: pointer;
+  z-index: 2;
+  filter: drop-shadow(0 0 12px rgba(255,51,102,0.4));
+  transition: all var(--animation-time) cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.heart > img {
-  width: 80px;
-  height: auto;
+.heart img {
+  width: 120px;
+  transition: all 0.4s ease;
+  animation: heartbeat 2.5s ease-in-out infinite;
 }
 
-p {
-  font-size: 22px;
-}
 .message {
-  padding: 20px;
-  background-color: #eeeeee95;
-  min-width: 400px;
-  height: 70%;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  transform: translate(-50%, -50%) scale(0);
+  width: 85%;
+  max-width: 600px;
+  height: 75vh;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  animation-name: openmsg;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-play-state: paused;
-  animation-fill-mode: forwards;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 5px;
+  opacity: 0;
+  transform-origin: center 120%;
 }
 
-.heart > img:hover {
-  animation-name: beat;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+.message::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: -1;
 }
 
-#messageState {
+.message-content {
+  padding: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.4s;
 }
 
-@keyframes beat {
-  0% {
-    width: 80px;
-  }
-  25% {
-    width: 88px;
-  }
-  30% {
-    width: 80px;
-  }
-  50% {
-    width: 70px;
-  }
-  60% {
-    width: 80px;
-  }
-  75% {
-    width: 88px;
-  }
-  100% {
-    width: 80px;
-  }
+.message.active {
+  animation: unfold var(--animation-time) cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-@keyframes openmsg {
-  0% {
-    height: 0px;
-    padding: 0px 20px;
-  }
-  100% {
-    height: 75%;
-    padding: 20px 20px;
-  }
+.message.active .message-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes heartMove {
-  0% {
-    top: 50%;
-  }
-  100% {
-    top: 85%;
-    transform: translate(-50%, 0);
-  }
-}
-
-.openNor {
-  animation-direction: normal;
-  animation-play-state: running;
-}
-
-.closeNor {
-  animation-direction: reverse;
-  animation-play-state: running;
-}
-
-.no-anim {
-  animation: none;
-}
-
-.closed {
-  height: 0px;
-  padding: 0px 20px;
-}
-
-.bottom {
-  bottom: 5px;
-}
-
-.openHer {
-  animation-name: heartMove;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
-}
-
-.closeHer {
-  animation-name: heartMove;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-play-state: running;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-}
-
-.beating > img {
-  animation-name: beat;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-.openedHer {
+.heart.active {
   top: 85%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%) scale(0.8) rotate(8deg);
+  filter: brightness(1.2) drop-shadow(0 0 20px rgba(255,51,102,0.6));
 }
 
-.main {
-  color: red;
-  font-weight: 700;
-}
-@media (max-width: 480px) {
-  p {
-    font-size: 17px;
-  }
-  h1 {
-    padding-left: 10px;
-  }
-}
-@media (max-width: 580px) {
-  p {
-    font-size: 17px;
-  }
-}
 .back {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
-  font-size: 18px;
-  font-weight: 700;
+  transform: translateX(-50%);
   color: white;
-  text-shadow: 0 0 10px rgb(0, 0, 0);
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: opacity 0.4s ease;
+}
+
+/* Animations */
+@keyframes unfold {
+  0% {
+      transform: translate(-50%, -50%) scale(0) rotateZ(-15deg);
+      opacity: 0;
+  }
+  60% {
+      transform: translate(-50%, -50%) scale(1.02) rotateZ(5deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1) rotateZ(0deg);
+      opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,51,102,0.2);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: ripple 1.2s ease-out;
+}
+
+@keyframes ripple {
+  from {
+      width: 0;
+      height: 0;
+      opacity: 1;
+  }
+  to {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .message {
+      width: 90%;
+      height: 70vh;
+  }
+  .heart img { width: 100px; }
 }
