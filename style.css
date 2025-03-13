@@ -189,7 +189,7 @@ h2 {
   }
 
   .heart img {
-    width: 70px;
+    width: 90px;
   }
 
   .message-content {
@@ -198,6 +198,16 @@ h2 {
     line-height: 1.6;
     max-height: 55vh;
     overflow-y: auto;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+
+  .heart {
+    touch-action: manipulation;
+    user-select: none;
   }
 
   .back {
@@ -223,7 +233,7 @@ h2 {
 
   .heart.active {
     top: auto !important;
-    bottom: 40% !important;
+    bottom: 25% !important;
     transform: translateX(-50%) scale(0.7) !important;
   }
 
@@ -237,6 +247,16 @@ h2 {
     line-height: 1.6;
     max-height: 55vh;
     overflow-y: auto;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+
+  .heart {
+    touch-action: manipulation;
+    user-select: none;
   }
 
   .back {
@@ -262,7 +282,7 @@ h2 {
 
   .heart.active {
     top: auto !important;
-    bottom: 40% !important;
+    bottom: 25% !important;
     transform: translateX(-50%) scale(0.7) !important;
   }
 
@@ -276,6 +296,16 @@ h2 {
     line-height: 1.6;
     max-height: 55vh;
     overflow-y: auto;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+
+  .heart {
+    touch-action: manipulation;
+    user-select: none;
   }
 
   .back {
