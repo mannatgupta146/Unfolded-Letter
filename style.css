@@ -172,7 +172,7 @@ h2 {
 @media (max-width: 768px) {
   .message {
     width: 94%;
-    height: 65vh;
+    height: 30vh;
     top: 12% !important;
     transform: translate(-50%, 0) scale(0) !important;
     max-width: none;
@@ -196,7 +196,7 @@ h2 {
     padding: 20px;
     font-size: 0.85rem;
     line-height: 1.6;
-    max-height: 55vh;
+    max-height: 25vh;
     overflow-y: auto;
   }
 
@@ -221,7 +221,7 @@ h2 {
 @media (max-width: 480px) {
   .message {
     width: 94%;
-    height: 65vh;
+    height: 30vh;
     top: 10% !important;
     transform: translate(-50%, 0) scale(0) !important;
     max-width: none;
@@ -238,14 +238,14 @@ h2 {
   }
 
   .heart img {
-    width: 70px;
+    width: 80px;
   }
 
   .message-content {
     padding: 20px;
     font-size: 0.85rem;
     line-height: 1.6;
-    max-height: 55vh;
+    max-height: 25vh;
     overflow-y: auto;
   }
 
@@ -270,7 +270,7 @@ h2 {
 @media (max-height: 700px) and (orientation: portrait) {
   .message {
     width: 94%;
-    height: 75vh;
+    height: 30vh;
     top: 12% !important;
     transform: translate(-50%, 0) scale(0) !important;
     max-width: none;
@@ -287,11 +287,11 @@ h2 {
   }
 
   .heart img {
-    width: 70px;
+    width: 80px;
   }
 
   .message-content {
-    padding: 20px;
+    padding: 25px;
     font-size: 0.85rem;
     line-height: 1.6;
     max-height: 55vh;
