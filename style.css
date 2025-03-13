@@ -170,6 +170,15 @@ h2 {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .container {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    will-change: transform, opacity;
+  }
+
   .message {
     width: 94%;
     height: 30vh;
@@ -219,6 +228,16 @@ h2 {
 }
 
 @media (max-width: 480px) {
+
+  .container {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    will-change: transform, opacity;
+  }
+
   .message {
     width: 94%;
     height: 30vh;
@@ -268,6 +287,15 @@ h2 {
 }
 
 @media (max-height: 700px) and (orientation: portrait) {
+  .container {
+    position: relative;
+    height: 40vh;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    will-change: transform, opacity;
+  }
+  
   .message {
     width: 94%;
     height: 30vh;
