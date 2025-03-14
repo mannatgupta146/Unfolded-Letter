@@ -1,6 +1,11 @@
 # Unfolded Letter - Interactive Animated Message  
 A responsive web experience featuring a dynamic letter revelation mechanism with smooth animations and modern visual effects.
 
+## Preview  
+Here’s how the project looks in action:  
+
+![Screenshot](screenshot.png)  
+
 ## Key Features
 
 ### Animation System
@@ -20,11 +25,6 @@ A responsive web experience featuring a dynamic letter revelation mechanism with
 - Viewport-aware height calculations
 - Animation frame synchronization
 - Cross-browser compatibility
-
-## Preview  
-Here’s how the project looks in action:  
-
-![Screenshot](screenshot.png)  
 
 ## How It Works  
 1. A heart button appears at the center of the screen.  
