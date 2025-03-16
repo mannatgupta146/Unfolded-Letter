@@ -167,7 +167,6 @@ h2 {
   }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .container {
     position: relative;
