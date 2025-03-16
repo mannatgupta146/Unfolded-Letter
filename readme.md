@@ -2,7 +2,7 @@
 A responsive web experience featuring a dynamic letter revelation mechanism with smooth animations and modern visual effects.
 
 ## Preview  
-Here’s how the project looks in action:  
+Here’s how the project looks like:  
 
 ![Screenshot](screenshot.png)  
 
