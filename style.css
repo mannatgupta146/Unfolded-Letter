@@ -127,7 +127,6 @@ h2 {
   transition: opacity 0.4s ease;
 }
 
-
 @keyframes unfold {
   0% {
     transform: translate3d(-50%, -50%, 0) scale(0) rotateZ(-15deg);
